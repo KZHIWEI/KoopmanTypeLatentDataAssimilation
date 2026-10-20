@@ -1,0 +1,220 @@
+defaults:
+  model: kae
+  ckpt_name: kae.pt
+  out_root: checkpoint
+  constraint: weak
+  obs_ratio: 0.15
+  mask_kind: random
+  mask_seed: 0
+  background: nmc
+  nmc_samples: 300
+  b_ridge: 0.05
+  iters: 400
+  lr: 0.05
+cylinder:
+  patch: 8
+  tok_dim: 8
+  window_size: 6
+  spinup: 4
+  obs_every: 2
+  nmc_lead: 4
+shallow_water:
+  patch: 16
+  tok_dim: 16
+  window_size: 6
+  spinup: 4
+  obs_every: 2
+  nmc_lead: 4
+lorenz96:
+  patch: 1
+  tok_dim: 3
+  window_size: 5
+  spinup: 2
+  obs_every: 1
+  nmc_lead: 4
+era5:
+  patch: 8
+  tok_dim: 32
+  window_size: 3
+  spinup: 2
+  obs_every: 1
+  nmc_lead: 4
+lorenz96_obs50:
+  patch: 1
+  tok_dim: 3
+  window_size: 5
+  spinup: 2
+  obs_every: 1
+  nmc_lead: 4
+  obs_ratio: 0.5
+  arch: mlp
+lorenz96_obs15:
+  patch: 1
+  tok_dim: 3
+  window_size: 5
+  spinup: 2
+  obs_every: 1
+  nmc_lead: 4
+  obs_ratio: 0.15
+  arch: mlp
+lorenz96_obs30:
+  patch: 1
+  tok_dim: 3
+  window_size: 5
+  spinup: 2
+  obs_every: 1
+  nmc_lead: 4
+  obs_ratio: 0.3
+  arch: mlp
+cylinder_obs15:
+  patch: 8
+  tok_dim: 8
+  window_size: 6
+  spinup: 4
+  obs_every: 2
+  nmc_lead: 4
+  obs_ratio: 0.15
+cylinder_obs30:
+  patch: 8
+  tok_dim: 8
+  window_size: 6
+  spinup: 4
+  obs_every: 2
+  nmc_lead: 4
+  obs_ratio: 0.3
+cylinder_obs50:
+  patch: 8
+  tok_dim: 8
+  window_size: 6
+  spinup: 4
+  obs_every: 2
+  nmc_lead: 4
+  obs_ratio: 0.5
+shallow_water_obs15:
+  patch: 16
+  tok_dim: 16
+  window_size: 6
+  spinup: 4
+  obs_every: 2
+  nmc_lead: 4
+  obs_ratio: 0.15
+shallow_water_obs30:
+  patch: 16
+  tok_dim: 16
+  window_size: 6
+  spinup: 4
+  obs_every: 2
+  nmc_lead: 4
+  obs_ratio: 0.3
+shallow_water_obs50:
+  patch: 16
+  tok_dim: 16
+  window_size: 6
+  spinup: 4
+  obs_every: 2
+  nmc_lead: 4
+  obs_ratio: 0.5
+era5_obs15:
+  patch: 8
+  tok_dim: 32
+  window_size: 3
+  spinup: 2
+  obs_every: 1
+  nmc_lead: 4
+  obs_ratio: 0.15
+era5_obs30:
+  patch: 8
+  tok_dim: 32
+  window_size: 3
+  spinup: 2
+  obs_every: 1
+  nmc_lead: 4
+  obs_ratio: 0.3
+era5_obs50:
+  patch: 8
+  tok_dim: 32
+  window_size: 3
+  spinup: 2
+  obs_every: 1
+  nmc_lead: 4
+  obs_ratio: 0.5
+era5_high:
+  patch: 8
+  tok_dim: 12
+  window_size: 3
+  spinup: 2
+  obs_every: 1
+  nmc_lead: 4
+era5_high_obs15:
+  patch: 8
+  tok_dim: 12
+  window_size: 3
+  spinup: 2
+  obs_every: 1
+  nmc_lead: 4
+  obs_ratio: 0.15
+era5_high_obs30:
+  patch: 8
+  tok_dim: 12
+  window_size: 3
+  spinup: 2
+  obs_every: 1
+  nmc_lead: 4
+  obs_ratio: 0.3
+era5_high_obs50:
+  patch: 8
+  tok_dim: 12
+  window_size: 3
+  spinup: 2
+  obs_every: 1
+  nmc_lead: 4
+  obs_ratio: 0.5
+lorenz96_obs5:
+  patch: 1
+  tok_dim: 3
+  window_size: 5
+  spinup: 2
+  obs_every: 1
+  nmc_lead: 4
+  obs_ratio: 0.05
+  arch: mlp
+cylinder_obs5:
+  patch: 8
+  tok_dim: 8
+  window_size: 6
+  spinup: 4
+  obs_every: 2
+  nmc_lead: 4
+  obs_ratio: 0.05
+shallow_water_obs5:
+  patch: 16
+  tok_dim: 16
+  window_size: 6
+  spinup: 4
+  obs_every: 2
+  nmc_lead: 4
+  obs_ratio: 0.05
+era5_obs5:
+  patch: 8
+  tok_dim: 32
+  window_size: 3
+  spinup: 2
+  obs_every: 1
+  nmc_lead: 4
+  obs_ratio: 0.05
+era5_high_obs5:
+  patch: 8
+  tok_dim: 12
+  window_size: 3
+  spinup: 2
+  obs_every: 1
+  nmc_lead: 4
+  obs_ratio: 0.05
+era5_obs1:
+  patch: 8
+  tok_dim: 32
+  window_size: 3
+  spinup: 2
+  obs_every: 1
+  nmc_lead: 4
+  obs_ratio: 0.01

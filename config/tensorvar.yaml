@@ -1,0 +1,217 @@
+defaults:
+  patch: 16
+  dim: 224
+  depth: 9
+  heads: 8
+  tok_dim: 8
+  mlp_ratio: 2.6667
+  refine: true
+  history_len: 10
+  obs_ratio: 0.15
+  nu: 1.0
+  koopman_steps: 5
+  w_pred: 1.0
+  batch_size: 16
+  max_epochs: 100
+  inv_max_epochs: 60
+  patience: 8
+  ae_lr: 3.0e-05
+  koopman_lr: 0.001
+  obs_lr: 0.0003
+  weight_decay: 0.05
+  min_lr: 1.0e-06
+  precision: bf16
+  seed: 1
+  num_val_windows: 400
+  out_root: checkpoint
+cylinder:
+  patch: 8
+  tok_dim: 8
+  koopman_steps: 8
+  pretrained_ae: ckpt_release/pretrained_ae/cylinder/ae.pt
+shallow_water:
+  patch: 16
+  tok_dim: 16
+  pretrained_ae: ckpt_release/pretrained_ae/shallow_water/ae.pt
+era5:
+  patch: 8
+  tok_dim: 32
+  batch_size: 64
+  pretrained_ae: ckpt_release/pretrained_ae/era5/ae.pt
+lorenz96:
+  patch: 1
+  tok_dim: 3
+  batch_size: 64
+  pretrained_ae: ckpt_release/pretrained_ae/lorenz96/ae.pt
+lorenz96_obs50:
+  release_dataset: lorenz96
+  patch: 1
+  tok_dim: 3
+  batch_size: 64
+  pretrained_ae: ckpt_release/pretrained_ae/lorenz96/ae_mlp.pt
+  arch: mlp
+  obs_ratio: 0.5
+lorenz96_obs15:
+  release_dataset: lorenz96
+  patch: 1
+  tok_dim: 3
+  batch_size: 64
+  pretrained_ae: ckpt_release/pretrained_ae/lorenz96/ae_mlp.pt
+  arch: mlp
+  obs_ratio: 0.15
+lorenz96_obs30:
+  release_dataset: lorenz96
+  patch: 1
+  tok_dim: 3
+  batch_size: 64
+  pretrained_ae: ckpt_release/pretrained_ae/lorenz96/ae_mlp.pt
+  arch: mlp
+  obs_ratio: 0.3
+cylinder_obs15:
+  release_dataset: cylinder
+  release_model: tensorvar
+  patch: 8
+  tok_dim: 8
+  koopman_steps: 8
+  pretrained_ae: ckpt_release/pretrained_ae/cylinder/ae.pt
+  obs_ratio: 0.15
+cylinder_obs30:
+  release_dataset: cylinder
+  release_model: tensorvar
+  patch: 8
+  tok_dim: 8
+  koopman_steps: 8
+  pretrained_ae: ckpt_release/pretrained_ae/cylinder/ae.pt
+  obs_ratio: 0.3
+cylinder_obs50:
+  release_dataset: cylinder
+  release_model: tensorvar
+  patch: 8
+  tok_dim: 8
+  koopman_steps: 8
+  pretrained_ae: ckpt_release/pretrained_ae/cylinder/ae.pt
+  obs_ratio: 0.5
+shallow_water_obs15:
+  release_dataset: shallow_water
+  release_model: tensorvar
+  patch: 16
+  tok_dim: 16
+  pretrained_ae: ckpt_release/pretrained_ae/shallow_water/ae.pt
+  obs_ratio: 0.15
+shallow_water_obs30:
+  release_dataset: shallow_water
+  release_model: tensorvar
+  patch: 16
+  tok_dim: 16
+  pretrained_ae: ckpt_release/pretrained_ae/shallow_water/ae.pt
+  obs_ratio: 0.3
+shallow_water_obs50:
+  release_dataset: shallow_water
+  release_model: tensorvar
+  patch: 16
+  tok_dim: 16
+  pretrained_ae: ckpt_release/pretrained_ae/shallow_water/ae.pt
+  obs_ratio: 0.5
+era5_obs15:
+  release_dataset: era5
+  release_model: tensorvar
+  patch: 8
+  tok_dim: 32
+  batch_size: 64
+  pretrained_ae: ckpt_release/pretrained_ae/era5/ae.pt
+era5_obs30:
+  release_dataset: era5
+  release_model: tensorvar
+  patch: 8
+  tok_dim: 32
+  batch_size: 64
+  pretrained_ae: ckpt_release/pretrained_ae/era5/ae.pt
+  obs_ratio: 0.3
+era5_obs50:
+  release_dataset: era5
+  release_model: tensorvar
+  patch: 8
+  tok_dim: 32
+  batch_size: 64
+  pretrained_ae: ckpt_release/pretrained_ae/era5/ae.pt
+  obs_ratio: 0.5
+era5_high:
+  patch: 8
+  tok_dim: 12
+  batch_size: 16
+  pretrained_ae: ckpt_release/pretrained_ae/era5_high/ae.pt
+era5_high_obs15:
+  release_dataset: era5_high
+  release_model: tensorvar
+  patch: 8
+  tok_dim: 12
+  batch_size: 16
+  pretrained_ae: ckpt_release/pretrained_ae/era5_high/ae.pt
+era5_high_obs30:
+  release_dataset: era5_high
+  release_model: tensorvar
+  patch: 8
+  tok_dim: 12
+  batch_size: 16
+  pretrained_ae: ckpt_release/pretrained_ae/era5_high/ae.pt
+era5_high_obs50:
+  release_dataset: era5_high
+  release_model: tensorvar
+  patch: 8
+  tok_dim: 12
+  batch_size: 16
+  pretrained_ae: ckpt_release/pretrained_ae/era5_high/ae.pt
+lorenz96_obs5:
+  release_dataset: lorenz96
+  patch: 1
+  tok_dim: 3
+  batch_size: 64
+  pretrained_ae: ckpt_release/pretrained_ae/lorenz96/ae_mlp.pt
+  arch: mlp
+  obs_ratio: 0.05
+cylinder_obs5:
+  release_dataset: cylinder
+  release_model: tensorvar
+  patch: 8
+  tok_dim: 8
+  koopman_steps: 8
+  pretrained_ae: ckpt_release/pretrained_ae/cylinder/ae.pt
+  obs_ratio: 0.05
+shallow_water_obs5:
+  release_dataset: shallow_water
+  release_model: tensorvar
+  patch: 16
+  tok_dim: 16
+  pretrained_ae: ckpt_release/pretrained_ae/shallow_water/ae.pt
+  obs_ratio: 0.05
+era5_obs5:
+  release_dataset: era5
+  release_model: tensorvar
+  patch: 8
+  tok_dim: 32
+  batch_size: 64
+  pretrained_ae: ckpt_release/pretrained_ae/era5/ae.pt
+  obs_ratio: 0.05
+era5_high_obs5:
+  release_dataset: era5_high
+  release_model: tensorvar
+  patch: 8
+  tok_dim: 12
+  batch_size: 16
+  pretrained_ae: ckpt_release/pretrained_ae/era5_high/ae.pt
+lorenz96_inverse_pretrain:
+  release_dataset: lorenz96
+  patch: 1
+  tok_dim: 3
+  batch_size: 64
+  inv_max_epochs: 30
+  obs_ratio: 0.3
+  pretrained_ae: ckpt_release/pretrained_ae/lorenz96/ae.pt
+era5_obs1:
+  release_dataset: era5
+  release_model: tensorvar
+  patch: 8
+  tok_dim: 32
+  batch_size: 64
+  pretrained_ae: ckpt_release/pretrained_ae/era5/ae.pt
+  obs_ratio: 0.01

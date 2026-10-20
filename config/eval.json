@@ -1,0 +1,445 @@
+{
+ "densities": [
+  5,
+  15,
+  30,
+  50
+ ],
+ "datasets": {
+  "lorenz96": {
+   "nl_ae": {
+    "driver": "src.assimilation.variational.assimilate_runs",
+    "ckpt": "ckpt_release/lorenz96/nl_ae/seed1/nl_ae.pt",
+    "flags": {
+     "constraint": "weak",
+     "converged": true,
+     "conv_iters": 1600
+    },
+    "sigma": "config/sweep.json"
+   },
+   "wl_ae": {
+    "driver": "src.assimilation.variational.assimilate_runs",
+    "ckpt": "ckpt_release/lorenz96/wl_ae/seed1/wl_ae.pt",
+    "flags": {
+     "constraint": "weak",
+     "converged": true,
+     "conv_iters": 1600
+    },
+    "sigma": "config/sweep.json"
+   },
+   "kae": {
+    "driver": "src.assimilation.variational.assimilate_runs",
+    "ckpt": "ckpt_release/lorenz96/kae/seed1/kae.pt",
+    "flags": {
+     "constraint": "weak",
+     "converged": true,
+     "conv_iters": 1600
+    },
+    "sigma": "config/sweep.json"
+   },
+   "tensorvar": {
+    "driver": "src.assimilation.tensorvar_feature",
+    "fwd": "ckpt_release/lorenz96/tensorvar/seed1/forward.pt",
+    "ckpt": [
+     "ckpt_release/lorenz96/tensorvar/seed1/inverse_encoder@{d}.pt"
+    ],
+    "flags": {
+     "calib": "fwd",
+     "calib_ridge": 0.001,
+     "ridge": 0.01,
+     "nseg": 600,
+     "seglen": 40,
+     "timecorr": 0
+    },
+    "sigma": {
+     "15": [
+      1.0,
+      1.0
+     ],
+     "30": [
+      1.0,
+      1.0
+     ],
+     "50": [
+      1.0,
+      1.0
+     ],
+     "5": [
+      1.0,
+      1.0
+     ]
+    }
+   },
+   "dbf": {
+    "driver": "src.assimilation.dbf",
+    "ckpt": "ckpt_release/lorenz96/dbf/seed1/dbf.pt",
+    "flags": {
+     "obs_every": 1,
+     "mask_fixed": false
+    }
+   },
+   "cgkn": {
+    "driver": "src/eval/cgkn/cgkn_filter_lorenz96.py",
+    "ckpt": "ckpt_release/lorenz96/cgkn/seed1/cgkn@{d}.pt",
+    "noise": "ckpt_release/cgkn_inputs/lorenz96_noise@{d}.pt",
+    "flags": {
+     "MODE": "strict",
+     "FILTER": "discrete"
+    }
+   },
+   "dmd": {
+    "driver": "src.assimilation.dmd",
+    "ckpt": null,
+    "flags": {
+     "r": 0,
+     "cov": "full"
+    }
+   }
+  },
+  "cylinder": {
+   "nl_ae": {
+    "driver": "src.assimilation.variational.assimilate_runs",
+    "ckpt": "ckpt_release/cylinder/nl_ae/seed1/nl_ae.pt",
+    "flags": {
+     "constraint": "weak",
+     "converged": true,
+     "conv_iters": 1600
+    },
+    "sigma": "config/sweep.json"
+   },
+   "wl_ae": {
+    "driver": "src.assimilation.variational.assimilate_runs",
+    "ckpt": "ckpt_release/cylinder/wl_ae/seed1/wl_ae.pt",
+    "flags": {
+     "constraint": "weak",
+     "converged": true,
+     "conv_iters": 1600
+    },
+    "sigma": "config/sweep.json"
+   },
+   "kae": {
+    "driver": "src.assimilation.variational.assimilate_runs",
+    "ckpt": "ckpt_release/cylinder/kae/seed1/kae.pt",
+    "flags": {
+     "constraint": "weak",
+     "converged": true,
+     "conv_iters": 1600
+    },
+    "sigma": "config/sweep.json"
+   },
+   "tensorvar": {
+    "driver": "src.eval.benchmark.run_tv_cell",
+    "fwd": "ckpt_release/cylinder/tensorvar/seed1/forward.pt",
+    "ckpt": [
+     "ckpt_release/cylinder/tensorvar/seed1/inverse_encoder@{d}.pt"
+    ],
+    "flags": {
+     "cov": "calibration",
+     "nseg": 600,
+     "seglen": 40,
+     "ridge": 0.1
+    },
+    "sigma": {
+     "15": [
+      10.0,
+      10.0
+     ],
+     "30": [
+      10.0,
+      100.0
+     ],
+     "50": [
+      10.0,
+      10.0
+     ],
+     "5": [
+      1.0,
+      1.0
+     ]
+    }
+   },
+   "dbf": {
+    "driver": "src.assimilation.dbf",
+    "ckpt": "ckpt_release/cylinder/dbf/seed1/dbf@{d}.pt",
+    "flags": {
+     "obs_every": 1,
+     "mask_fixed": false
+    }
+   },
+   "cgkn": {
+    "driver": "src/eval/cgkn/cgkn_filter_grid.py",
+    "ckpt": "ckpt_release/cylinder/cgkn/seed1/cgkn@{d}.pt",
+    "flags": {
+     "MODE": "strict",
+     "DS": "cylinder"
+    }
+   },
+   "dmd": {
+    "driver": "src.assimilation.dmd",
+    "ckpt": null,
+    "flags": {
+     "r": 0,
+     "cov": "full"
+    }
+   }
+  },
+  "shallow_water": {
+   "nl_ae": {
+    "driver": "src.assimilation.variational.assimilate_runs",
+    "ckpt": "ckpt_release/shallow_water/nl_ae/seed1/nl_ae.pt",
+    "flags": {
+     "constraint": "weak",
+     "converged": true,
+     "conv_iters": 1600
+    },
+    "sigma": "config/sweep.json"
+   },
+   "wl_ae": {
+    "driver": "src.assimilation.variational.assimilate_runs",
+    "ckpt": "ckpt_release/shallow_water/wl_ae/seed1/wl_ae.pt",
+    "flags": {
+     "constraint": "weak",
+     "converged": true,
+     "conv_iters": 1600
+    },
+    "sigma": "config/sweep.json"
+   },
+   "kae": {
+    "driver": "src.assimilation.variational.assimilate_runs",
+    "ckpt": "ckpt_release/shallow_water/kae/seed1/kae.pt",
+    "flags": {
+     "constraint": "weak",
+     "converged": true,
+     "conv_iters": 1600
+    },
+    "sigma": "config/sweep.json"
+   },
+   "tensorvar": {
+    "driver": "src.eval.benchmark.run_tv_cell",
+    "fwd": "ckpt_release/shallow_water/tensorvar/seed1/forward.pt",
+    "ckpt": [
+     "ckpt_release/shallow_water/tensorvar/seed1/inverse_encoder@{d}.pt"
+    ],
+    "flags": {
+     "cov": "paired_samples",
+     "qr_n": 8000,
+     "qr_ridge": 0.1
+    },
+    "sigma": {
+     "15": [
+      0.1,
+      100.0
+     ],
+     "30": [
+      0.1,
+      10.0
+     ],
+     "50": [
+      0.01,
+      1.0
+     ],
+     "5": [
+      0.1,
+      1.0
+     ]
+    }
+   },
+   "dbf": {
+    "driver": "src.assimilation.dbf",
+    "ckpt": "ckpt_release/shallow_water/dbf/seed1/dbf@{d}.pt",
+    "flags": {
+     "obs_every": 1,
+     "mask_fixed": false
+    }
+   },
+   "cgkn": {
+    "driver": "src/eval/cgkn/cgkn_filter_grid.py",
+    "ckpt": "ckpt_release/shallow_water/cgkn/seed1/cgkn@{d}.pt",
+    "flags": {
+     "MODE": "strict",
+     "DS": "shallow_water"
+    }
+   },
+   "dmd": {
+    "driver": "src.assimilation.dmd",
+    "ckpt": null,
+    "flags": {
+     "r": 0,
+     "cov": "full"
+    }
+   }
+  },
+  "era5": {
+   "nl_ae": {
+    "driver": "src.assimilation.variational.assimilate_runs",
+    "ckpt": "ckpt_release/era5/nl_ae/seed1/nl_ae.pt",
+    "flags": {
+     "constraint": "weak",
+     "converged": true,
+     "conv_iters": 1600
+    },
+    "sigma": "config/sweep.json"
+   },
+   "wl_ae": {
+    "driver": "src.assimilation.variational.assimilate_runs",
+    "ckpt": "ckpt_release/era5/wl_ae/seed1/wl_ae.pt",
+    "flags": {
+     "constraint": "weak",
+     "converged": true,
+     "conv_iters": 1600
+    },
+    "sigma": "config/sweep.json"
+   },
+   "kae": {
+    "driver": "src.assimilation.variational.assimilate_runs",
+    "ckpt": "ckpt_release/era5/kae/seed1/kae.pt",
+    "flags": {
+     "constraint": "weak",
+     "converged": true,
+     "conv_iters": 1600
+    },
+    "sigma": "config/sweep.json"
+   },
+   "tensorvar": {
+    "driver": "src.eval.benchmark.run_tv_cell",
+    "fwd": "ckpt_release/era5/tensorvar/seed1/forward.pt",
+    "ckpt": [
+     "ckpt_release/era5/tensorvar/seed1/inverse_encoder@{d}.pt"
+    ],
+    "flags": {
+     "cov": "full",
+     "qr_n": 400,
+     "qr_ridge": 0.1
+    },
+    "sigma": {
+     "15": [
+      1.0,
+      10.0
+     ],
+     "30": [
+      1.0,
+      10.0
+     ],
+     "50": [
+      1.0,
+      10.0
+     ],
+     "5": [
+      0.1,
+      1.0
+     ]
+    }
+   },
+   "dbf": {
+    "driver": "src.assimilation.dbf",
+    "ckpt": "ckpt_release/era5/dbf/seed1/dbf@{d}.pt",
+    "flags": {
+     "obs_every": 1,
+     "mask_fixed": false
+    }
+   },
+   "cgkn": {
+    "driver": "src/eval/cgkn/cgkn_filter_grid.py",
+    "ckpt": "ckpt_release/era5/cgkn/seed1/cgkn@{d}.pt",
+    "flags": {
+     "MODE": "strict",
+     "DS": "era5"
+    }
+   },
+   "dmd": {
+    "driver": "src.assimilation.dmd",
+    "ckpt": null,
+    "flags": {
+     "r": 0,
+     "cov": "full"
+    }
+   }
+  },
+  "era5_high": {
+   "nl_ae": {
+    "driver": "src.assimilation.variational.assimilate_runs",
+    "ckpt": "ckpt_release/era5_high/nl_ae/seed1/nl_ae.pt",
+    "flags": {
+     "constraint": "weak",
+     "converged": true,
+     "conv_iters": 1600
+    },
+    "sigma": "config/sweep.json"
+   },
+   "wl_ae": {
+    "driver": "src.assimilation.variational.assimilate_runs",
+    "ckpt": "ckpt_release/era5_high/wl_ae/seed1/wl_ae.pt",
+    "flags": {
+     "constraint": "weak",
+     "converged": true,
+     "conv_iters": 1600
+    },
+    "sigma": "config/sweep.json"
+   },
+   "kae": {
+    "driver": "src.assimilation.variational.assimilate_runs",
+    "ckpt": "ckpt_release/era5_high/kae/seed1/kae.pt",
+    "flags": {
+     "constraint": "weak",
+     "converged": true,
+     "conv_iters": 1600
+    },
+    "sigma": "config/sweep.json"
+   },
+   "tensorvar": {
+    "driver": "src.assimilation.tensorvar_inpaint",
+    "fwd": "ckpt_release/era5_high/tensorvar/seed1/forward.pt",
+    "ckpt": [
+     "ckpt_release/era5_high/tensorvar/seed1/inverse_encoder@{d}.pt"
+    ],
+    "flags": {
+     "cov": "full",
+     "width": 96,
+     "n_attn": 4
+    },
+    "sigma": {
+     "15": [
+      0.1,
+      100.0
+     ],
+     "30": [
+      0.1,
+      100.0
+     ],
+     "50": [
+      1.0,
+      100.0
+     ],
+     "5": [
+      0.1,
+      100.0
+     ]
+    }
+   },
+   "dbf": {
+    "driver": "src.assimilation.dbf",
+    "ckpt": "ckpt_release/era5_high/dbf/seed1/dbf@{d}.pt",
+    "flags": {
+     "obs_every": 1,
+     "mask_fixed": false
+    }
+   },
+   "cgkn": {
+    "driver": "src/eval/cgkn/cgkn_filter_grid.py",
+    "ckpt": "ckpt_release/era5_high/cgkn/seed1/cgkn@{d}.pt",
+    "flags": {
+     "MODE": "strict",
+     "DS": "era5_high"
+    }
+   },
+   "dmd": {
+    "driver": "src.assimilation.dmd",
+    "ckpt": null,
+    "flags": {
+     "r": 0,
+     "cov": "full"
+    }
+   }
+  }
+ }
+}

@@ -1,0 +1,221 @@
+cylinder:
+  in_channels: 2
+  image_size: [64, 64]
+  skip: 5
+  data_path: data/cylinder/train.npy
+  val_path: data/cylinder/val.npy
+  test_path: data/cylinder/test.npy
+  da_data_path: data/cylinder/test.npy
+  eval:
+    length: 32
+    frame_range: [40, 200]
+    val_starts:
+    - [0, 40]
+    - [1, 40]
+    - [2, 40]
+    - [3, 40]
+    - [4, 40]
+shallow_water:
+  in_channels: 3
+  image_size: [96, 192]
+  skip: 2
+  data_path: data/shallow_water/train.npy
+  val_path: data/shallow_water/val.npy
+  test_path: data/shallow_water/test.npy
+  da_data_path: data/shallow_water/test.npy
+  eval:
+    length: 40
+    frame_range: [4, 88]
+    val_starts:
+    - [0, 4]
+    - [1, 4]
+    - [2, 4]
+    - [3, 4]
+    - [4, 4]
+    - [5, 4]
+    - [6, 4]
+    - [7, 4]
+    - [8, 4]
+    - [9, 4]
+  norm_mean: [-0.45975378155708313, -0.009099559858441353, 5.12332010269165]
+  norm_std: [3.4403135776519775, 3.4233860969543457, 38.25110626220703]
+lorenz96:
+  in_channels: 1
+  image_size: [8, 5]
+  skip: 1
+  data_path: data/lorenz96/train.npy
+  val_path: data/lorenz96/val.npy
+  test_path: data/lorenz96/test.npy
+  da_data_path: data/lorenz96/test.npy
+  eval:
+    length: 40
+    frame_range: [100, 1500]
+    val_starts:
+    - [0, 100]
+    - [1, 100]
+    - [2, 100]
+    - [3, 100]
+    - [4, 100]
+    - [5, 100]
+    - [6, 100]
+    - [7, 100]
+    - [8, 100]
+    - [9, 100]
+era5:
+  in_channels: 5
+  image_size: [64, 32]
+  skip: 4
+  data_path: data/era5/train.h5
+  val_path: data/era5/val.h5
+  test_path: data/era5/test.h5
+  da_data_path: data/era5/test.h5
+  eval:
+    length: 14
+    val_starts:
+    - [0, 0]
+    - [0, 137]
+    - [0, 274]
+    - [0, 411]
+    - [0, 548]
+    - [0, 685]
+    - [0, 822]
+    - [0, 959]
+    - [0, 1096]
+    - [0, 1233]
+lorenz96_obs50:
+  data: lorenz96
+lorenz96_mlp_ae:
+  in_channels: 1
+  image_size: [8, 5]
+  skip: 1
+  data_path: data/lorenz96/train.npy
+  val_path: data/lorenz96/val.npy
+  test_path: data/lorenz96/test.npy
+  eval:
+    length: 40
+    frame_range: [100, 1500]
+    val_starts:
+    - [0, 100]
+    - [1, 100]
+    - [2, 100]
+    - [3, 100]
+    - [4, 100]
+    - [5, 100]
+    - [6, 100]
+    - [7, 100]
+    - [8, 100]
+    - [9, 100]
+lorenz96_obs15:
+  data: lorenz96
+lorenz96_obs30:
+  data: lorenz96
+cylinder_obs15:
+  data: cylinder
+cylinder_obs30:
+  data: cylinder
+cylinder_obs50:
+  data: cylinder
+shallow_water_obs15:
+  data: shallow_water
+shallow_water_obs30:
+  data: shallow_water
+shallow_water_obs50:
+  data: shallow_water
+era5_obs15:
+  data: era5
+era5_obs30:
+  data: era5
+era5_obs50:
+  data: era5
+era5_high:
+  in_channels: 5
+  image_size: [240, 120]
+  skip: 4
+  data_path: data/era5_high/train.h5
+  norm_mean: [54621.24609375, 1.4268783330917358, 0.13223806023597717, 268.2240295410156, 0.0015274619217962027]
+  norm_std: [3377.3740234375, 8.048949241638184, 6.096089839935303, 16.832008361816406, 0.0017399494536221027]
+  val_path: data/era5_high/val.h5
+  test_path: data/era5_high/test.h5
+  da_data_path: data/era5_high/test.h5
+  eval:
+    length: 14
+    val_starts:
+    - [0, 0]
+    - [0, 137]
+    - [0, 274]
+    - [0, 411]
+    - [0, 548]
+    - [0, 685]
+    - [0, 822]
+    - [0, 959]
+    - [0, 1096]
+    - [0, 1233]
+era5_high_obs15:
+  data: era5_high
+era5_high_obs30:
+  data: era5_high
+era5_high_obs50:
+  data: era5_high
+era5_high_ae:
+  in_channels: 5
+  image_size: [240, 120]
+  skip: 4
+  data_path: data/era5_high/train.h5
+  val_path: data/era5_high/val.h5
+  test_path: data/era5_high/test.h5
+  da_data_path: data/era5_high/test.h5
+  eval:
+    length: 14
+    val_starts:
+    - [0, 0]
+    - [0, 137]
+    - [0, 274]
+    - [0, 411]
+    - [0, 548]
+    - [0, 685]
+    - [0, 822]
+    - [0, 959]
+    - [0, 1096]
+    - [0, 1233]
+lorenz96_latent120:
+  data: lorenz96
+lorenz96_latent80:
+  data: lorenz96
+lorenz96_latent40:
+  data: lorenz96
+lorenz96_latent20:
+  data: lorenz96
+lorenz96_obs5:
+  data: lorenz96
+cylinder_obs5:
+  data: cylinder
+shallow_water_obs5:
+  data: shallow_water
+era5_obs5:
+  data: era5
+era5_high_obs5:
+  data: era5_high
+lorenz96_inverse_pretrain:
+  in_channels: 1
+  image_size: [8, 5]
+  skip: 1
+  data_path: data/lorenz96/train.npy
+  val_path: data/lorenz96/val.npy
+  test_path: data/lorenz96/test.npy
+  eval:
+    length: 40
+    frame_range: [100, 1500]
+    val_starts:
+    - [0, 100]
+    - [1, 100]
+    - [2, 100]
+    - [3, 100]
+    - [4, 100]
+    - [5, 100]
+    - [6, 100]
+    - [7, 100]
+    - [8, 100]
+    - [9, 100]
+  release_dataset: lorenz96
+era5_obs1:
+  data: era5

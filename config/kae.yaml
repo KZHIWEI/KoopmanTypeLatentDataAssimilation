@@ -1,0 +1,256 @@
+defaults:
+  patch: 16
+  dim: 224
+  depth: 9
+  heads: 8
+  tok_dim: 8
+  mlp_ratio: 2.6667
+  refine: true
+  koopman_steps: 5
+  skip: 15
+  w_recon: 1.0
+  w_pred: 1.0
+  w_latent: 0.1
+  batch_size: 16
+  max_epochs: 100
+  patience: 8
+  ae_lr: 3.0e-05
+  koopman_lr: 0.001
+  weight_decay: 0.05
+  min_lr: 1.0e-06
+  precision: bf16
+  seed: 1
+  num_val_windows: 400
+  out_root: checkpoint
+cylinder:
+  patch: 8
+  tok_dim: 8
+  koopman_steps: 8
+  train_frame_start: 40
+  train_frames: 200
+  pretrained_ae: ckpt_release/pretrained_ae/cylinder/ae.pt
+  ckpt_name: kae.pt
+  w_spec: 10.0
+shallow_water:
+  patch: 16
+  tok_dim: 16
+  koopman_steps: 5
+  batch_size: 16
+  pretrained_ae: ckpt_release/pretrained_ae/shallow_water/ae.pt
+  ckpt_name: kae.pt
+  w_spec: 1
+era5:
+  patch: 8
+  tok_dim: 32
+  koopman_steps: 5
+  pretrained_ae: ckpt_release/pretrained_ae/era5/ae.pt
+  ckpt_name: kae.pt
+  batch_size: 64
+  w_spec: 10.0
+lorenz96:
+  release_dataset: lorenz96
+  release_model: kae
+  patch: 1
+  tok_dim: 3
+  koopman_steps: 10
+  pretrained_ae: ckpt_release/pretrained_ae/lorenz96/ae_mlp.pt
+  ckpt_name: kae.pt
+  patience: 1000
+  arch: mlp
+  w_spec: 10.0
+lorenz96_obs50:
+  patch: 1
+  tok_dim: 3
+  koopman_steps: 10
+  pretrained_ae: ckpt_release/pretrained_ae/lorenz96/ae_mlp.pt
+  ckpt_name: kae.pt
+  arch: mlp
+lorenz96_obs15:
+  patch: 1
+  tok_dim: 3
+  koopman_steps: 10
+  pretrained_ae: ckpt_release/pretrained_ae/lorenz96/ae_mlp.pt
+  ckpt_name: kae.pt
+  arch: mlp
+lorenz96_obs30:
+  patch: 1
+  tok_dim: 3
+  koopman_steps: 10
+  pretrained_ae: ckpt_release/pretrained_ae/lorenz96/ae_mlp.pt
+  ckpt_name: kae.pt
+  arch: mlp
+cylinder_obs15:
+  patch: 8
+  tok_dim: 8
+  koopman_steps: 8
+  train_frame_start: 40
+  train_frames: 200
+  pretrained_ae: ckpt_release/pretrained_ae/cylinder/ae.pt
+  ckpt_name: kae.pt
+cylinder_obs30:
+  patch: 8
+  tok_dim: 8
+  koopman_steps: 8
+  train_frame_start: 40
+  train_frames: 200
+  pretrained_ae: ckpt_release/pretrained_ae/cylinder/ae.pt
+  ckpt_name: kae.pt
+cylinder_obs50:
+  patch: 8
+  tok_dim: 8
+  koopman_steps: 8
+  train_frame_start: 40
+  train_frames: 200
+  pretrained_ae: ckpt_release/pretrained_ae/cylinder/ae.pt
+  ckpt_name: kae.pt
+shallow_water_obs15:
+  patch: 16
+  tok_dim: 16
+  koopman_steps: 5
+  batch_size: 16
+  pretrained_ae: ckpt_release/pretrained_ae/shallow_water/ae.pt
+  ckpt_name: kae.pt
+shallow_water_obs30:
+  patch: 16
+  tok_dim: 16
+  koopman_steps: 5
+  batch_size: 16
+  pretrained_ae: ckpt_release/pretrained_ae/shallow_water/ae.pt
+  ckpt_name: kae.pt
+shallow_water_obs50:
+  patch: 16
+  tok_dim: 16
+  koopman_steps: 5
+  batch_size: 16
+  pretrained_ae: ckpt_release/pretrained_ae/shallow_water/ae.pt
+  ckpt_name: kae.pt
+era5_obs15:
+  patch: 8
+  tok_dim: 32
+  koopman_steps: 5
+  pretrained_ae: ckpt_release/pretrained_ae/era5/ae.pt
+  ckpt_name: kae.pt
+era5_obs30:
+  patch: 8
+  tok_dim: 32
+  koopman_steps: 5
+  pretrained_ae: ckpt_release/pretrained_ae/era5/ae.pt
+  ckpt_name: kae.pt
+era5_obs50:
+  patch: 8
+  tok_dim: 32
+  koopman_steps: 5
+  pretrained_ae: ckpt_release/pretrained_ae/era5/ae.pt
+  ckpt_name: kae.pt
+era5_high:
+  patch: 8
+  tok_dim: 12
+  koopman_steps: 10
+  pretrained_ae: ckpt_release/pretrained_ae/era5_high/ae.pt
+  ckpt_name: kae.pt
+  batch_size: 8
+  w_spec: 10.0
+era5_high_obs15:
+  patch: 8
+  tok_dim: 12
+  koopman_steps: 10
+  pretrained_ae: ckpt_release/pretrained_ae/era5_high/ae.pt
+  ckpt_name: kae.pt
+  batch_size: 16
+  num_train_windows: 8000
+era5_high_obs30:
+  patch: 8
+  tok_dim: 12
+  koopman_steps: 10
+  pretrained_ae: ckpt_release/pretrained_ae/era5_high/ae.pt
+  ckpt_name: kae.pt
+  batch_size: 16
+  num_train_windows: 8000
+era5_high_obs50:
+  patch: 8
+  tok_dim: 12
+  koopman_steps: 10
+  pretrained_ae: ckpt_release/pretrained_ae/era5_high/ae.pt
+  ckpt_name: kae.pt
+  batch_size: 16
+  num_train_windows: 8000
+lorenz96_latent120:
+  patch: 1
+  tok_dim: 3
+  koopman_steps: 10
+  pretrained_ae: ckpt_release/ablation/latent_dimension/latent120/ae.pt
+  ckpt_name: kae.pt
+  patience: 1000
+  arch: mlp
+  w_spec: 10.0
+lorenz96_latent80:
+  patch: 1
+  tok_dim: 2
+  koopman_steps: 10
+  pretrained_ae: ckpt_release/ablation/latent_dimension/latent80/ae.pt
+  ckpt_name: kae.pt
+  patience: 1000
+  arch: mlp
+  w_spec: 10.0
+lorenz96_latent40:
+  patch: 1
+  tok_dim: 1
+  koopman_steps: 10
+  pretrained_ae: ckpt_release/ablation/latent_dimension/latent40/ae.pt
+  ckpt_name: kae.pt
+  patience: 1000
+  arch: mlp
+  w_spec: 10.0
+lorenz96_latent20:
+  patch: 1
+  tok_dim: 1
+  latent_dim: 20
+  koopman_steps: 10
+  pretrained_ae: ckpt_release/ablation/latent_dimension/latent20/ae.pt
+  ckpt_name: kae.pt
+  patience: 1000
+  arch: mlp
+  w_spec: 10.0
+lorenz96_obs5:
+  patch: 1
+  tok_dim: 3
+  koopman_steps: 10
+  pretrained_ae: ckpt_release/pretrained_ae/lorenz96/ae_mlp.pt
+  ckpt_name: kae.pt
+  arch: mlp
+cylinder_obs5:
+  patch: 8
+  tok_dim: 8
+  koopman_steps: 8
+  train_frame_start: 40
+  train_frames: 200
+  pretrained_ae: ckpt_release/pretrained_ae/cylinder/ae.pt
+  ckpt_name: kae.pt
+shallow_water_obs5:
+  patch: 16
+  tok_dim: 16
+  koopman_steps: 5
+  batch_size: 16
+  pretrained_ae: ckpt_release/pretrained_ae/shallow_water/ae.pt
+  ckpt_name: kae.pt
+era5_obs5:
+  patch: 8
+  tok_dim: 32
+  koopman_steps: 5
+  pretrained_ae: ckpt_release/pretrained_ae/era5/ae.pt
+  ckpt_name: kae.pt
+era5_high_obs5:
+  patch: 8
+  tok_dim: 12
+  koopman_steps: 10
+  pretrained_ae: ckpt_release/pretrained_ae/era5_high/ae.pt
+  ckpt_name: kae.pt
+  batch_size: 16
+  num_train_windows: 8000
+era5_obs1:
+  patch: 8
+  tok_dim: 32
+  koopman_steps: 5
+  pretrained_ae: ckpt_release/pretrained_ae/era5/ae.pt
+  ckpt_name: kae.pt
+  obs_ratio: 0.01

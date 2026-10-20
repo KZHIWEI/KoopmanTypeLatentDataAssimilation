@@ -1,0 +1,15 @@
+__pycache__/
+*.pyc
+/data
+/checkpoint/
+/ckpt_release
+/results/
+.cgkn_subsets
+.remote.json
+.gauss_cache
+
+/resource/
+/figures/
+/output/
+/plots/*.png
+/plots/*.pdf

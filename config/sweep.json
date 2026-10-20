@@ -1,0 +1,305 @@
+{
+ "n_cells": 60,
+ "cells": {
+  "cylinder:kae:obs15": {
+   "sigma_r": 0.01,
+   "sigma_q": 0.01,
+   "weak_best": 0.048548
+  },
+  "cylinder:kae:obs30": {
+   "sigma_r": 0.01,
+   "sigma_q": 0.001,
+   "weak_best": 0.04681
+  },
+  "cylinder:kae:obs50": {
+   "sigma_r": 0.01,
+   "sigma_q": 0.001,
+   "weak_best": 0.045785
+  },
+  "cylinder:nl_ae:obs15": {
+   "sigma_r": 0.001,
+   "sigma_q": 1.0,
+   "weak_best": 0.109178
+  },
+  "cylinder:nl_ae:obs30": {
+   "sigma_r": 0.001,
+   "sigma_q": 1.0,
+   "weak_best": 0.100865
+  },
+  "cylinder:nl_ae:obs50": {
+   "sigma_r": 0.001,
+   "sigma_q": 1.0,
+   "weak_best": 0.098578
+  },
+  "cylinder:wl_ae:obs15": {
+   "sigma_r": 0.001,
+   "sigma_q": 0.01,
+   "weak_best": 0.081247
+  },
+  "cylinder:wl_ae:obs30": {
+   "sigma_r": 0.001,
+   "sigma_q": 1.0,
+   "weak_best": 0.075381
+  },
+  "cylinder:wl_ae:obs50": {
+   "sigma_r": 0.001,
+   "sigma_q": 100.0,
+   "weak_best": 0.074385
+  },
+  "era5:kae:obs15": {
+   "sigma_r": 0.1,
+   "sigma_q": 0.01,
+   "weak_best": 0.31326958537101746
+  },
+  "era5:kae:obs30": {
+   "sigma_r": 0.1,
+   "sigma_q": 0.01,
+   "weak_best": 0.24942634999752045
+  },
+  "era5:kae:obs50": {
+   "sigma_r": 0.01,
+   "sigma_q": 0.001,
+   "weak_best": 0.2030852884054184
+  },
+  "era5:nl_ae:obs15": {
+   "sigma_r": 0.1,
+   "sigma_q": 0.1,
+   "weak_best": 0.42661577463150024
+  },
+  "era5:nl_ae:obs30": {
+   "sigma_r": 0.1,
+   "sigma_q": 0.1,
+   "weak_best": 0.3032163083553314
+  },
+  "era5:nl_ae:obs50": {
+   "sigma_r": 0.1,
+   "sigma_q": 0.1,
+   "weak_best": 0.2246929556131363
+  },
+  "era5:wl_ae:obs15": {
+   "sigma_r": 0.1,
+   "sigma_q": 0.01,
+   "weak_best": 0.4834871292114258
+  },
+  "era5:wl_ae:obs30": {
+   "sigma_r": 0.01,
+   "sigma_q": 0.01,
+   "weak_best": 0.3782431185245514
+  },
+  "era5:wl_ae:obs50": {
+   "sigma_r": 0.001,
+   "sigma_q": 100.0,
+   "weak_best": 0.24142703413963318
+  },
+  "era5_high:kae:obs15": {
+   "sigma_r": 100.0,
+   "sigma_q": 0.1,
+   "weak_best": 0.346723
+  },
+  "era5_high:kae:obs30": {
+   "sigma_r": 100.0,
+   "sigma_q": 0.1,
+   "weak_best": 0.381171
+  },
+  "era5_high:kae:obs50": {
+   "sigma_r": 100.0,
+   "sigma_q": 0.1,
+   "weak_best": 0.412477
+  },
+  "era5_high:nl_ae:obs15": {
+   "sigma_r": 0.01,
+   "sigma_q": 0.01,
+   "weak_best": 0.23338
+  },
+  "era5_high:nl_ae:obs30": {
+   "sigma_r": 0.001,
+   "sigma_q": 0.001,
+   "weak_best": 0.161221
+  },
+  "era5_high:nl_ae:obs50": {
+   "sigma_r": 0.01,
+   "sigma_q": 0.01,
+   "weak_best": 0.140749
+  },
+  "era5_high:wl_ae:obs15": {
+   "sigma_r": 0.001,
+   "sigma_q": 100.0,
+   "weak_best": 0.304731
+  },
+  "era5_high:wl_ae:obs30": {
+   "sigma_r": 0.001,
+   "sigma_q": 10.0,
+   "weak_best": 0.25801
+  },
+  "era5_high:wl_ae:obs50": {
+   "sigma_r": 0.001,
+   "sigma_q": 100.0,
+   "weak_best": 0.246512
+  },
+  "lorenz96:kae:obs15": {
+   "sigma_r": 0.1,
+   "sigma_q": 0.01,
+   "weak_best": 0.569521
+  },
+  "lorenz96:kae:obs30": {
+   "sigma_r": 0.1,
+   "sigma_q": 0.1,
+   "weak_best": 0.266247
+  },
+  "lorenz96:kae:obs50": {
+   "sigma_r": 0.1,
+   "sigma_q": 0.1,
+   "weak_best": 0.126581
+  },
+  "lorenz96:nl_ae:obs15": {
+   "sigma_r": 0.1,
+   "sigma_q": 0.1,
+   "weak_best": 0.324635
+  },
+  "lorenz96:nl_ae:obs30": {
+   "sigma_r": 0.1,
+   "sigma_q": 0.1,
+   "weak_best": 0.233875
+  },
+  "lorenz96:nl_ae:obs50": {
+   "sigma_r": 0.1,
+   "sigma_q": 0.1,
+   "weak_best": 0.18447
+  },
+  "lorenz96:wl_ae:obs15": {
+   "sigma_r": 0.1,
+   "sigma_q": 0.1,
+   "weak_best": 0.34981
+  },
+  "lorenz96:wl_ae:obs30": {
+   "sigma_r": 0.1,
+   "sigma_q": 0.1,
+   "weak_best": 0.240578
+  },
+  "lorenz96:wl_ae:obs50": {
+   "sigma_r": 0.1,
+   "sigma_q": 0.1,
+   "weak_best": 0.179772
+  },
+  "shallow_water:kae:obs15": {
+   "sigma_r": 0.1,
+   "sigma_q": 0.001,
+   "weak_best": 0.104354
+  },
+  "shallow_water:kae:obs30": {
+   "sigma_r": 0.1,
+   "sigma_q": 0.001,
+   "weak_best": 0.102868
+  },
+  "shallow_water:kae:obs50": {
+   "sigma_r": 1.0,
+   "sigma_q": 0.01,
+   "weak_best": 0.124667
+  },
+  "shallow_water:nl_ae:obs15": {
+   "sigma_r": 0.01,
+   "sigma_q": 0.1,
+   "weak_best": 0.256766
+  },
+  "shallow_water:nl_ae:obs30": {
+   "sigma_r": 0.01,
+   "sigma_q": 0.01,
+   "weak_best": 0.254213
+  },
+  "shallow_water:nl_ae:obs50": {
+   "sigma_r": 0.001,
+   "sigma_q": 0.001,
+   "weak_best": 0.251828
+  },
+  "shallow_water:wl_ae:obs15": {
+   "sigma_r": 0.001,
+   "sigma_q": 0.001,
+   "weak_best": 0.27818
+  },
+  "shallow_water:wl_ae:obs30": {
+   "sigma_r": 0.001,
+   "sigma_q": 0.001,
+   "weak_best": 0.275902
+  },
+  "shallow_water:wl_ae:obs50": {
+   "sigma_r": 0.001,
+   "sigma_q": 0.001,
+   "weak_best": 0.276598
+  },
+  "cylinder:nl_ae:obs5": {
+   "sigma_r": 0.01,
+   "sigma_q": 1.0,
+   "weak_best": 0.121547
+  },
+  "cylinder:wl_ae:obs5": {
+   "sigma_r": 0.001,
+   "sigma_q": 0.01,
+   "weak_best": 0.103499
+  },
+  "cylinder:kae:obs5": {
+   "sigma_r": 0.01,
+   "sigma_q": 0.01,
+   "weak_best": 0.050789
+  },
+  "era5:nl_ae:obs5": {
+   "sigma_r": 1.0,
+   "sigma_q": 1.0,
+   "weak_best": 0.5279865264892578
+  },
+  "era5:wl_ae:obs5": {
+   "sigma_r": 1.0,
+   "sigma_q": 0.1,
+   "weak_best": 0.5411403775215149
+  },
+  "era5:kae:obs5": {
+   "sigma_r": 0.1,
+   "sigma_q": 0.01,
+   "weak_best": 0.41185712814331055
+  },
+  "era5_high:nl_ae:obs5": {
+   "sigma_r": 0.01,
+   "sigma_q": 0.01,
+   "weak_best": 0.444086
+  },
+  "era5_high:wl_ae:obs5": {
+   "sigma_r": 0.01,
+   "sigma_q": 0.001,
+   "weak_best": 0.437187
+  },
+  "era5_high:kae:obs5": {
+   "sigma_r": 100.0,
+   "sigma_q": 1.0,
+   "weak_best": 0.439963
+  },
+  "lorenz96:nl_ae:obs5": {
+   "sigma_r": 0.1,
+   "sigma_q": 0.1,
+   "weak_best": 0.562851
+  },
+  "lorenz96:wl_ae:obs5": {
+   "sigma_r": 0.1,
+   "sigma_q": 0.1,
+   "weak_best": 0.576512
+  },
+  "lorenz96:kae:obs5": {
+   "sigma_r": 1.0,
+   "sigma_q": 0.1,
+   "weak_best": 0.808554
+  },
+  "shallow_water:nl_ae:obs5": {
+   "sigma_r": 0.01,
+   "sigma_q": 0.1,
+   "weak_best": 0.275795
+  },
+  "shallow_water:wl_ae:obs5": {
+   "sigma_r": 0.01,
+   "sigma_q": 0.01,
+   "weak_best": 0.298804
+  },
+  "shallow_water:kae:obs5": {
+   "sigma_r": 0.1,
+   "sigma_q": 0.001,
+   "weak_best": 0.131352
+  }
+ }
+}
